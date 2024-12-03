@@ -32,6 +32,7 @@
             background-color: rgba(0, 0, 0, 0.8);
             align-items: center;
             justify-content: center;
+            z-index: 1000;
         }
         .lightbox img {
             max-width: 80%;
@@ -40,118 +41,108 @@
         .lightbox:target {
             display: flex;
         }
+        .lightbox a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
     </style>
 </head>
 <body>
 
     <!-- Image Grid -->
     <div class="image-grid">
-        <a href="#img1"><img src="covidpic1.png" alt="Image 1"></a>
-        <a href="#img2"><img src="covidpic2.png" alt="Image 2"></a>
-        <a href="#img3"><img src="covidpic3.png" alt="Image 3"></a>
-        <a href="#img4"><img src="covidpic4.png" alt="Image 4"></a>
-        <a href="#img5"><img src="covidpic5.png" alt="Image 5"></a>
-        <a href="#img6"><img src="covidpic6.png" alt="Image 6"></a>
-        <a href="#img7"><img src="covidpic7.png" alt="Image 7"></a>
-        <a href="#img8"><img src="covidpic8.png" alt="Image 8"></a>
-        <a href="#img9"><img src="covidpic9.png" alt="Image 9"></a>
-        <a href="#img10"><img src="covidpic10.png" alt="Image 10"></a>
-        <a href="#img11"><img src="covidpic11.png" alt="Image 11"></a>
-        <a href="#img12"><img src="covidpic12.png" alt="Image 12"></a>
-        <a href="#img13"><img src="covidpic13.png" alt="Image 13"></a>
-        <a href="#img14"><img src="covidpic14.png" alt="Image 14"></a>
-        <a href="#img15"><img src="covidpic15.png" alt="Image 15"></a>
-        <a href="#img16"><img src="covidpic16.png" alt="Image 16"></a>
-        <a href="#img17"><img src="covidpic17.png" alt="Image 17"></a>
-
-
+        <a href="#img1"><img src="covidpic1.png"></a>
+        <a href="#img2"><img src="covidpic2.png"></a>
+        <a href="#img3"><img src="covidpic3.png"></a>
+        <a href="#img4"><img src="covidpic4.png"></a>
+        <a href="#img5"><img src="covidpic5.png"></a>
+        <a href="#img6"><img src="covidpic6.png"></a>
+        <a href="#img7"><img src="covidpic7.png"></a>
+        <a href="#img8"><img src="covidpic8.png"></a>
+        <a href="#img9"><img src="covidpic9.png"></a>
+        <a href="#img10"><img src="covidpic10.png"></a>
+        <a href="#img11"><img src="covidpic11.png"></a>
+        <a href="#img12"><img src="covidpic12.png"></a>
+        <a href="#img13"><img src="covidpic13.png"></a>
+        <a href="#img14"><img src="covidpic14.png"></a>
+        <a href="#img15"><img src="covidpic15.png"></a>
+        <a href="#img16"><img src="covidpic16.png"></a>
+        <a href="#img17"><img src="covidpic17.png"></a>
     </div>
 
     <!-- Lightbox for each image -->
     <div id="img1" class="lightbox">
-        <img src="image1.png" alt="Image 1">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
+        <img src="covidpic1.png">
+        <a href="#">Close</a>
     </div>
-   
     <div id="img2" class="lightbox">
-        <img src="image2.png" alt="Image 2">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
+        <img src="covidpic2.png">
+        <a href="#">Close</a>
     </div>
-   
     <div id="img3" class="lightbox">
-        <img src="image3.png" alt="Image 3">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
+        <img src="covidpic3.png">
+        <a href="#">Close</a>
     </div>
-    
     <div id="img4" class="lightbox">
-        <img src="image4.png" alt="Image 4">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>    
-    
+        <img src="covidpic4.png">
+        <a href="#">Close</a>
+    </div>
     <div id="img5" class="lightbox">
-        <img src="image5.png" alt="Image 5">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
+        <img src="covidpic5.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img6" class="lightbox">
+        <img src="covidpic6.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img7" class="lightbox">
+        <img src="covidpic7.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img8" class="lightbox">
+        <img src="covidpic8.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img9" class="lightbox">
+        <img src="covidpic9.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img10" class="lightbox">
+        <img src="covidpic10.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img11" class="lightbox">
+        <img src="covidpic11.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img12" class="lightbox">
+        <img src="covidpic12.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img13" class="lightbox">
+        <img src="covidpic13.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img14" class="lightbox">
+        <img src="covidpic14.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img15" class="lightbox">
+        <img src="covidpic15.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img16" class="lightbox">
+        <img src="covidpic16.png">
+        <a href="#">Close</a>
+    </div>
+    <div id="img17" class="lightbox">
+        <img src="covidpic17.png">
+        <a href="#">Close</a>
     </div>
 
-    <div class="image-container">
-        <img src="image6.png" alt="Image 6">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-    
-    <div class="image-container">
-        <img src="image7.png" alt="Image 7">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-    
-    <div class="image-container">
-        <img src="image8.png" alt="Image 8">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-    
-    <div class="image-container">
-        <img src="image9.png" alt="Image 9">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-    
-    <div class="image-container">
-        <img src="image10.png" alt="Image 10">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-    
-    <div class="image-container">
-        <img src="image11.png" alt="Image 11">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-    
-    <div class="image-container">
-        <img src="image12.png" alt="Image 12">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-    
-    <div class="image-container">
-        <img src="image13.png" alt="Image 13">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-    
-    <div class="image-container">
-        <img src="image14.png" alt="Image 14">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-    
-    <div class="image-container">
-        <img src="image15.png" alt="Image 15">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-    
-    <div class="image-container">
-        <img src="image16.png" alt="Image 16">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-
-    <div class="image-container">
-        <img src="image17.png" alt="Image 17">
-        <a href="#" style="color: white; font-size: 20px; text-decoration: none; position: absolute; top: 20px; right: 20px;">Close</a>
-    </div>
-    
 </body>
 </html>
