@@ -49,6 +49,16 @@
             top: 20px;
             right: 20px;
         }
+        .label {
+        background-color: rgba(101, 201, 79, 0.8); /* White with 80% opacity */
+        padding: 10px;
+        border-radius: 5px; /* Rounded corners (optional) */
+        position: relative;
+        font-size: 16px; /* Adjust text size if needed */
+        color: black; /* Ensure the text remains visible */
+        text-align: center; /* Center the text */
+        width: auto; /* Adjust automatically to content width */
+    }
     </style>
 </head>
 <body>
@@ -77,17 +87,21 @@
     <!-- Lightbox for each image -->
     <div id="img1" class="lightbox">
         <img src="covidpic1.png">
+        <p class="label" style="margin-left:-180px;margin-top: 620px;">Mum - "Should I book a COVID vaccine for you this week? </p>
         <a href="#">Close</a>
     </div>
     <div id="img2" class="lightbox">
         <img src="covidpic2.png">
+        <p class="label">At COVID vaccine center</p>
         <a href="#">Close</a>
     </div>
     <div id="img3" class="lightbox">
+        <p class="label">April 2023 -- someone at the beach STILL scared of COVID</p>
         <img src="covidpic3.png">
         <a href="#">Close</a>
     </div>
     <div id="img4" class="lightbox">
+        <p class="label">JULY 2023 </p>
         <img src="covidpic4.png">
         <a href="#">Close</a>
     </div>
