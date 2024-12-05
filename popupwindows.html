@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <title>Popup Windows</title>
+    <style>
+        html {
+            background-image: url('bbcchina.png'); /* Background image */
+            background-size: cover; /* Cover the whole screen */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Fix the background during scrolling */
+            margin: auto;
+            width: 21cm;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .window {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 3px;
+            border-top: 30px solid #acd5f7;
+            background: #ededed;
+            filter: drop-shadow(4px 4px 6px #292929);
+            padding: 5px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .create-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: crimson;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .create-btn:hover {
+            background-color: #ff5050;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mywindow"></div>
+
+    <!-- Button to create more windows -->
+    <button id="createWindowBtn" onclick="createNewWindow()">Create New Window</button>
+
+    <script>
+        let width = window.innerWidth - 200;
+        let height = window.innerHeight - 200;
+
+        // Create the initial window
+        createWindow("mywindow", "Image Window", random(width), random(height), 'px');
+
+        // Function to create new pop-up windows
+        function createNewWindow() {
+            createWindow("mywindow", "New Image Window", random(width), random(height), 'px');
+        }
+
+        // Function to create a window with an image
+        function createWindow(where, content = "", x = 0, y = 0, unit = "%") {
+            let css = "position:absolute;";
+            css += "top:" + y + unit + ";"
+            css += "left:" + x + unit + ";";
+
+            let element = document.createElement("div");
+            element.innerHTML = content;
+            element.setAttribute("class", "window");
+            element.setAttribute("style", css);
+
+            // Create an image inside the window
+            let img = document.createElement("img");
+            img.src = "img.jpeg";  // Replace with your image path
+            element.appendChild(img);
+
+            // Create the "Create New Window" button inside the window
+            let button = document.createElement("button");
+            button.classList.add("create-btn");
+            button.textContent = "X";
+            button.onclick = createNewWindow;
+            element.appendChild(button);
+
+            document.getElementById(where).appendChild(element);
+        }
+
+        // Function to generate a random number for positioning the windows
+        function random(end) {
+            return Math.floor(Math.random() * end);
+        }
+    </script>
+
+</body>
+</html>

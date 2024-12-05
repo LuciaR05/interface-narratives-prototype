@@ -13,3 +13,7 @@ PICTURES SCROLLING DOWN THE PAGE
 
 - also wanting to add to the imageGridPage.html 
     >> add javascript of the esc button
+
+
+link to image used for hk government 
+    https://multimedia.scmp.com/infographics/news/hong-kong/article/3050053/hong-kong-coronavirus-infected-cases/index.html 
