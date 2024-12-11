@@ -14,8 +14,8 @@
 
         .window {
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 600px; /* Increased width */
+            height: 400px; /* Increased height */
             border-radius: 3px;
             border-top: 30px solid #acd5f7;
             background: #ededed;
@@ -24,8 +24,8 @@
         }
 
         img {
-            width: 100%;
-            height: auto;
+            width: 100%; /* Adjusts to window width */
+            height: auto; /* Keeps aspect ratio */
             border-radius: 5px;
         }
 
@@ -50,19 +50,20 @@
 
     <div id="mywindow"></div>
 
-    <!-- Button to create more windows -->
+    <!-- Button to create more windows
     <button id="createWindowBtn" onclick="createNewWindow()">Create New Window</button>
-
+ -->
     <script>
         let width = window.innerWidth - 200;
         let height = window.innerHeight - 200;
+        let whichImage = 0; 
+        let myImages = ['govpress1.png', 'govpress2.png', 'govpress3.png','govpress4.png','govpress5.png'];
 
         // Create the initial window
-        createWindow("mywindow", "Image Window", random(width), random(height), 'px');
-
+        createWindow("mywindow", "", random(width), random(height), 'px');
         // Function to create new pop-up windows
         function createNewWindow() {
-            createWindow("mywindow", "New Image Window", random(width), random(height), 'px');
+            createWindow("mywindow", "", random(width), random(height), 'px');
         }
 
         // Function to create a window with an image
@@ -78,8 +79,14 @@
 
             // Create an image inside the window
             let img = document.createElement("img");
-            img.src = "img.jpeg";  // Replace with your image path
+            img.src = myImages[whichImage]; //"hkukfirstcases.png";  // Replace with your image path
             element.appendChild(img);
+            console.log(myImages[whichImage]);
+            whichImage++;
+            console.log('len:'+myImages.length, 'whichImage:'+whichImage);
+            if(whichImage==myImages.length){
+                whichImage = 0; 
+            }
 
             // Create the "Create New Window" button inside the window
             let button = document.createElement("button");
