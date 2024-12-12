@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <style>
-        * {
+ * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -15,12 +14,52 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+            position: relative;
         }
 
-        .slideshow-container {
-            position: relative;
+        .newspaper-img {
+            position: absolute;
+            top: 50%;  /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%);  /* Exact center */
+            z-index: 10;
+            width: 25%;  /* Smaller width */
+            height: auto; /* Maintain aspect ratio */
+            opacity: 1; /* Slight transparency */
+}
+        .timeline {
+            position: absolute;
+            top: 80%;  /* Adjust position to be beneath the newspaper */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-evenly;
             width: 80%;
-            height: 400px;
+            z-index: 5; /* Under the newspaper image */
+        }
+
+        .circle {
+            width: 10px; /* Small circle size */
+            height: 10px;
+            border-radius: 50%;
+            border: 3px solid white;
+            background-color: transparent;
+            transition: background-color 0.5s ease, border 0.5s ease;
+        }
+
+        .active {
+            background-color: white;
+            border: 3px solid transparent;
+        }
+
+
+        .slideshow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
         }
 
@@ -30,50 +69,141 @@
         }
 
         .slide {
+            position: relative;
             width: 100%;
             height: 100%;
             flex-shrink: 0;
+        }
+
+        .date {
+            position: absolute;
+            top: 15%; /*have to position the date higher up, to adjust to the newspaper image*/
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 60px; /* Increased font size */
+            color: white;
+            text-shadow: 2px 2px 5px black; /* Adds black outline to text */
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 5px solid white;
+            animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
         }
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+            filter: brightness(1.1) contrast(1.2) saturate(1.2) grayscale(0.3);
         }
+
     </style>
 </head>
 <body>
+    <!-- Newspaper image -->
+    <img src="newspaper.png" class="newspaper-img" alt="Newspaper Image">
 
     <div class="slideshow-container">
         <div class="slides" id="slides">
-            <!-- Images for slideshow -->
-            <div class="slide"><img src="photoboothmask/photobooth1.png" alt="Image 1"></div>
-            <div class="slide"><img src="photoboothmask/photobooth2.png" alt="Image 2"></div>
-            <div class="slide"><img src="photoboothmask/photobooth3.png" alt="Image 3"></div>
-            <div class="slide"><img src="photoboothmask/photobooth4.png" alt="Image 4"></div>
-            <div class="slide"><img src="photoboothmask/photobooth5.png" alt="Image 5"></div>
-            <div class="slide"><img src="photoboothmask/photobooth6.png" alt="Image 6"></div>
-            <div class="slide"><img src="photoboothmask/photobooth7.png" alt="Image 7"></div>
-            <div class="slide"><img src="photoboothmask/photobooth8.png" alt="Image 8"></div>
-            <div class="slide"><img src="photoboothmask/photobooth9.png" alt="Image 9"></div>
-            <div class="slide"><img src="photoboothmask/photobooth10.png" alt="Image 10"></div>
-            <div class="slide"><img src="photoboothmask/photobooth11.png" alt="Image 11"></div>
-            <div class="slide"><img src="photoboothmask/photobooth12.png" alt="Image 12"></div>
-            <div class="slide"><img src="photoboothmask/photobooth13.png" alt="Image 13"></div>
+            <!-- Images with dates -->
+            <div class="slide">
+                <img src="photoboothmask/photobooth1.png" alt="Image 1">
+                <div class="date">29/5/2020</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth2.png" alt="Image 2">
+                <div class="date">11/6/2020</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth3.png" alt="Image 3">
+                <div class="date">16/6/2020</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth4.png" alt="Image 4">
+                <div class="date">12/10/2020</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth5.png" alt="Image 5">
+                <div class="date">12/12/2020</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth6.png" alt="Image 6">
+                <div class="date">1/2/2021</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth7.png" alt="Image 7">
+                <div class="date">12/6/2021</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth8.png" alt="Image 8">
+                <div class="date">31/8/2021</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth9.png" alt="Image 9">
+                <div class="date">29/8/2022</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth10.png" alt="Image 10">
+                <div class="date">14/11/2022</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth11.png" alt="Image 11">
+                <div class="date">1/2/2023</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth12.png" alt="Image 12">
+                <div class="date">2/3/2023</div>
+            </div>
+            <div class="slide">
+                <img src="photoboothmask/photobooth13.png" alt="Image 13">
+                <div class="date">5/3/2023</div>
+            </div>
         </div>
     </div>
+
+        <!-- Timeline with Circles -->
+        <div class="timeline" id="timeline">
+            <!-- 13 circles for each image -->
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+
 
     <script>
         let currentSlide = 0;
         const slides = document.getElementById('slides');
         const totalSlides = document.querySelectorAll('.slide').length;
+        const circles = document.querySelectorAll('.circle');
+
 
         function showNextSlide() {
             currentSlide = (currentSlide + 1) % totalSlides;
             slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateTimeline();
         }
 
-        setInterval(showNextSlide, 2500); // Change slide every 3 seconds
+        function updateTimeline() {
+            // Reset all circles
+            circles.forEach(circle => circle.classList.remove('active'));
+            // Activate the current circle
+            circles[currentSlide].classList.add('active');
+        }
+
+        setInterval(showNextSlide, 3500); // Change slide every 3 seconds
     </script>
 
 </body>
