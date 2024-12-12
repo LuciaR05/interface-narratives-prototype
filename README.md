@@ -40,3 +40,12 @@ COVID is multiple
 
 
 pop up window -- click 5 times
+
+
+newspage.html 
+- How the web amplified or challenged official narratives
+https://hongkongbuzz.hk/2024/10/is-a-resurgence-of-the-pandemic-looming-lets-hope-not-but-worrying-signs-have-emerged 
+https://www.nbcnews.com/news/world/singapore-moves-reopen-hong-kong-remains-mired-covid-restrictions-rcna31079 
+https://www.scmp.com/sport/other-sport/article/3180158/hong-kong-gym-owners-see-glimmer-hope-covid-19-recovery-takes 
+
+
