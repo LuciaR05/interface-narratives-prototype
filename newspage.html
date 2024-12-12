@@ -4,33 +4,32 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #1e1e1e; /* Dark background */
-            color: #fff; /* White text for contrast */
+            background-color: #1e1e1e;
+            color: #fff;
             text-align: center;
             margin: 20px;
         }
 
         h1 {
             font-size: 48px;
-            color: #ff3b30; /* Red color for danger */
-            text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.6); /* Glowing effect */
+            color: #ff3b30;
+            text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.6);
         }
 
         .headline-container {
             width: 80%;
             margin: 20px auto;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            border: 2px solid #ff3b30; /* Red border */
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Glowing red border */
+            border: 2px solid #ff3b30;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
         }
 
         .headline img {
             width: 100%;
             height: auto;
             border-radius: 10px;
-            animation: fadeInOut 5s infinite; /* Flashing effect */
             display: none;
         }
 
@@ -42,7 +41,7 @@
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #ff0000; /* Blood red */
+            background-color: #ff0000;
             color: white;
             border: none;
             border-radius: 5px;
@@ -51,15 +50,9 @@
         }
 
         .toggle-button:hover {
-            background-color: #b30000; /* Darker red on hover */
+            background-color: #b30000;
             transform: scale(1.1);
             transition: all 0.2s;
-        }
-
-        @keyframes fadeInOut {
-            0% { opacity: 0.2; }
-            50% { opacity: 1; }
-            100% { opacity: 0.2; }
         }
 
         .quote {
@@ -80,13 +73,12 @@
             border: 1px solid white;
         }
 
-
     </style>
 </head>
 <body>
 
-    <h1>What’s the Truth?</h1> <!-- Mystery theme -->
-    <p>Can you see beyond the surface?</p> <!-- Adds curiosity -->
+    <h1>What’s the Truth?</h1>
+    <p>Can you see beyond the surface?</p>
 
     <div class="headline-container">
         <div id="headline1" class="headline active">
@@ -95,11 +87,19 @@
         <div id="headline2" class="headline">
             <img src="newspage2.png" alt="Headline 2">
         </div>
+        <div id="headline3" class="headline">
+            <img src="newspage3.png" alt="Headline 3">
+        </div>
+        <div id="headline4" class="headline">
+            <img src="newspage4.png" alt="Headline 4">
+        </div>
+        <div id="headline5" class="headline">
+            <img src="newspage5.png" alt="Headline 5">
+        </div>
     </div>
 
     <button class="toggle-button" onclick="toggleHeadline()">Switch Perspective</button>
 
-    <!-- Added quote section with typewriter effect -->
     <div class="quote">
         <span class="typewriter" id="typewriter-text"></span>
     </div>
@@ -107,14 +107,12 @@
     <script>
         let activeHeadline = 1;
 
-        // Function to toggle between headlines
         function toggleHeadline() {
             document.getElementById(`headline${activeHeadline}`).classList.remove('active');
-            activeHeadline = activeHeadline === 1 ? 2 : 1;
+            activeHeadline = (activeHeadline % 5) + 1;  // Cycle through 5 headlines
             document.getElementById(`headline${activeHeadline}`).classList.add('active');
         }
 
-        // Typewriter effect for the quote text
         let i = 0;
         let txt = 'I thought it was going to get better... COVID lasted for 3 whole years, on and off, intertwining itself within my last years of school.';
         let speed = 50;
@@ -127,7 +125,6 @@
             }
         }
 
-        // Start typing the quote when the page loads
         window.onload = typeWriter;
     </script>
 
