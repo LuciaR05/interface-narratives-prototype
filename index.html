@@ -63,10 +63,12 @@
     <div id="textbox" onclick="finalChange();">we were only supposed to have school off for 2 weeks...</div>
     <a href="imageGridPage.html" id="imageGridLink">COVID lasted from Nov 2019-March 2023 in Hong Kong... <p>Behind every positive case is a web of family, friends, and decisions</p></a>
 
+
     <script>
         // Initialize an array of images for background pages
         const images = ["page 1.jpg", "page 2.jpg", "page 3.jpg", "page4.jpg"];
         let currentIndex = 0; // Track the current page index
+        let closeCounter = 0; // Track the number of times the cross button is clicked
 
         function nextPage() {
             currentIndex++; // Move to the next page index
@@ -85,9 +87,16 @@
         }
 
         function finalChange() {
-            // Change the background and hide the text box
-            document.getElementById("mybody").style.backgroundImage = `url('finalpage.jpg')`;
-            document.getElementById("textbox").style.display = "none";
+            // Increment the close button counter
+            closeCounter++;
+
+            if (closeCounter >= 4) {
+                // Redirect to the next page after 4 clicks
+                window.location.href = "nextpage.html";
+            } else {
+                // Update the text box with remaining clicks
+                document.getElementById("textbox").textContent = `Click ${4 - closeCounter} more times to continue...`;
+            }
         }
     </script>
 </body>

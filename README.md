@@ -37,3 +37,6 @@ link to image used for hk government
         - outside the house its government information
 
 COVID is multiple
+
+
+pop up window -- click 5 times
